@@ -2,34 +2,21 @@
 import '../styles/global.css';
 import Navbar from '../Components/Navbar.svelte';
 import Footer from '../Components/Footer.svelte';
-import Hero from '../Components/Hero.svelte';
 ---
 
-<html lang="en" data-theme="light">
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Buhlebethu Mkhonta</title>
-		
 	</head>
 
 
 	<body>
-		<nav>
-			<Navbar />
-			<Hero />
-		</nav>
-		
-		<main>
-
-		</main>
-		<footer>
-			<Footer />
-		</footer>
-		
+		<Navbar />
+		<Footer />
 	</body>
 
 

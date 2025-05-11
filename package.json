@@ -9,6 +9,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.7.12"
+    "@astrojs/svelte": "^7.0.13",
+    "@lucide/astro": "^0.509.0",
+    "@tailwindcss/vite": "^4.1.6",
+    "astro": "^5.7.12",
+    "daisyui": "^5.0.35",
+    "svelte": "^5.28.2",
+    "tailwindcss": "^4.1.6",
+    "typescript": "^5.8.3"
   }
 }
