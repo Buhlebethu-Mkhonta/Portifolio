@@ -1,4 +1,18 @@
 @import 'tailwindcss';
+@import 'boxicons';
 @plugin 'daisyui';
+
+@keyframes pulse-text {
+    0%, 100% {
+      color: white;
+    }
+    50% {
+      color: #ef4444; /* red-500 */
+    }
+  }
+
+  .animate-pulse-text {
+    animation: pulse-text 1.5s ease-in-out infinite;
+  }
 
 

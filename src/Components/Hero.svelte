@@ -2,7 +2,7 @@
   // No script needed for static hero
 </script>
 
-<div class="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
+<div class="relative min-h-screen flex items-center justify-center bg-black overflow-hidden pt-16">
   <!-- Background image -->
   <img
     src="/images/Drone.jpg"
@@ -20,12 +20,14 @@
       Bridging the gap between aerial technology and IT infrastructure to deliver innovative solutions.
     </p>
     <div class="flex flex-col sm:flex-row gap-4">
-      <button class="btn bg-red-600 hover:bg-red-700 text-white text-lg px-8 py-3 rounded-full font-semibold shadow-lg">
+      <!--<button class="btn bg-red-600 hover:bg-red-700 text-white text-lg px-8 py-3 rounded-full font-semibold shadow-lg">
         View My Work
       </button>
-      <button class="btn border border-white text-white text-lg px-8 py-3 rounded-full font-semibold bg-transparent hover:bg-white hover:text-gray-900 transition">
+       -->
+      
+      <a href="/assets/CV.pdf" download="Buhlebethu_Mkhonta_CV.pdf" class="btn border border-white text-white text-lg px-8 py-3 rounded-full font-semibold bg-transparent hover:bg-white hover:text-gray-900 transition">
         Download CV
-      </button>
+      </a>
     </div>
   </div>
 </div>

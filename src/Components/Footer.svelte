@@ -1,53 +1,48 @@
 <script>
-    import { onMount } from 'svelte';
-    import { Lucide } from '@lucide/astro';
+  // No extra imports needed for Tailwind/DaisyUI and SVG icons
 </script>
 
-<footer class="footer sm:footer-horizontal bg-neutral text-neutral-content p-10">
-    <aside>
-      <img src="">
-      <p>
-        ACME Industries Ltd.
-        <br />
-        Providing reliable tech since 1992
-      </p>
-    </aside>
-    <nav>
-      <h6 class="footer-title">Social</h6>
-      <div class="grid grid-flow-col gap-4">
-        <a>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            class="fill-current">
-            <path
-              d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-          </svg>
-        </a>
-        <a>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            class="fill-current">
-            <path
-              d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-          </svg>
-        </a>
-        <a>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            class="fill-current">
-            <path
-              d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-          </svg>
-        </a>
+<footer class="bg-[#181c23] text-[#b0b8c1] pt-12 pb-4 px-4 md:px-16 w-full">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between md:items-start gap-10">
+    <!-- Left: Logo, Name, Description -->
+    <div class="flex-1 min-w-[220px]">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="text-2xl font-bold text-white tracking-wide">BM<span class="text-red-500">.</span></span>
       </div>
-    </nav>
-  </footer>
+      <p class="text-[#b0b8c1] max-w-xs mb-8 md:mb-0 text-sm md:text-base">
+        Bridging the gap between aerial technology and IT infrastructure to deliver innovative solutions.
+      </p>
+    </div>
+    <!-- Right: Quick Links & Contact -->
+    <div class="flex flex-col sm:flex-row gap-10 flex-1 justify-end">
+      
+      <div>
+        <h3 class="font-semibold text-white mb-2">Contact</h3>
+        <ul class="space-y-1">
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 4H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>buhlebethumkhonta@gmail.com</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92V19a2 2 0 0 1-2.18 2A19.72 19.72 0 0 1 3 5.18 2 2 0 0 1 5 3h2.09a2 2 0 0 1 2 1.72c.13 1.05.37 2.07.72 3.06a2 2 0 0 1-.45 2.11l-.27.27a16 16 0 0 0 6.29 6.29l.27-.27a2 2 0 0 1 2.11-.45c.99.35 2.01.59 3.06.72A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+268 7612 3456</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 6-9 13-9 13s-9-7-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Mbabane, Eswatini</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Divider -->
+  <div class="border-t border-[#23272f] my-8"></div>
+  <!-- Bottom: Copyright & Socials -->
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+    <div class="text-xs text-[#b0b8c1]">© 2025 Buhlebethu Mkhonta. All rights reserved.</div>
+    <div class="flex gap-4 justify-center md:justify-end">
+      <a href="www.linkedin.com/in/buhlebethu-mkhonta" aria-label="LinkedIn" class=" hover:bg-red-500 text-white rounded-md p-2 transition" target="_blank"><i class='bx bxl-linkedin'></i></a>
+      <a href="https://github.com/percy-san" aria-label="GitHub" class=" hover:bg-red-500 text-white rounded-md p-2 transition" target="_blank"><i class='bx bxl-github'></i></a>
+    </div>
+  </div>
+</footer>

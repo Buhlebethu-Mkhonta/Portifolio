@@ -1,24 +1,32 @@
 ---
 import '../styles/global.css';
-import Navbar from '../Components/Navbar.svelte';
-import Footer from '../Components/Footer.svelte';
+import LoadingScreen from '../Components/LoadingScreen.svelte';
+
+
 ---
 
-<html lang="en">
+<html lang="en" data-theme="light">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/Logo.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Buhlebethu Mkhonta</title>
+		<script>
+			// Scroll to top on page load
+			window.addEventListener('load', () => {
+				window.scrollTo(0, 0);
+			});
+			
+			// Also scroll to top when navigating
+			document.addEventListener('astro:page-load', () => {
+				window.scrollTo(0, 0);
+			});
+		</script>
 	</head>
 
-
 	<body>
-		<Navbar />
-		<Footer />
+		<LoadingScreen client:load />
+		<slot />
 	</body>
-
-
-
 </html>

@@ -1,37 +1,49 @@
 ---
 import '../styles/global.css';
+import Layout from '../Layouts/layout.astro';
 import Navbar from '../Components/Navbar.svelte';
 import Footer from '../Components/Footer.svelte';
 import Hero from '../Components/Hero.svelte';
+import About from '../Components/About.svelte';
+import Skills from '../Components/Skills.svelte';
+import Experience from '../Components/expereince.svelte';
+import Education from '../Components/education.svelte';
+import Projects from '../Components/Projects.astro';
+import Contact from '../Components/Contact.svelte'
+
 ---
 
-<html lang="en" data-theme="light">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<Layout>
+	<nav>
+		<Navbar />
+		<Hero />
+	</nav>
+	<main>
+		<div></div>
+		<About />
+		<div>
+			<Skills />
+		</div>
+
+		<div>
+			<Experience />
+		</div>
+
+		<div>
+			<Education />
+		</div>
 		
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Buhlebethu Mkhonta</title>
+		<div>
+			<Projects /> 
+		</div>
 		
-	</head>
-
-
-	<body>
-		<nav>
-			<Navbar />
-			<Hero />
-		</nav>
-		
-		<main>
-
-		</main>
-		<footer>
-			<Footer />
-		</footer>
-		
-	</body>
-
-
-
-</html>
+		<div>
+			<Contact />
+		</div>
+	
+	</main>
+	
+	
+	
+	<Footer />
+</Layout>
