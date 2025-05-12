@@ -1,4 +1,6 @@
 <script>
+  import { onMount } from 'svelte';
+
   let formData = {
     name: '',
     email: '',
@@ -13,55 +15,45 @@
   let isSubmitting = false;
   let submitStatus = '';
 
+  onMount(() => {
+    formData = {
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    };
+    submitStatus = '';
+  });
+
   function validateEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
 
-  async function handleSubmit(event) {
+  function handleSubmit(event) {
     event.preventDefault();
     isSubmitting = true;
     submitStatus = '';
-
-    // Reset errors
     errors.email = '';
-    
-    // Validate email
+
     if (!validateEmail(formData.email)) {
       errors.email = 'Please enter a valid email address';
       isSubmitting = false;
       return;
     }
 
-    try {
-      const response = await fetch('https://formspree.io/f/mgvkllzr', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
-
-      if (response.ok) {
-        submitStatus = 'success';
-        // Reset form
-        formData = {
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        };
-      } else {
-        submitStatus = 'error';
-      }
-    } catch (error) {
-      submitStatus = 'error';
-      console.error('Error submitting form:', error);
-    }
-
+    // Reset form
+    formData = {
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    };
+    submitStatus = 'success';
     isSubmitting = false;
   }
 </script>
+
 
 <section id="contact" class="bg-[#181c23] py-16 px-2 sm:px-4 w-full">
     <div class="text-center mt-8 mb-10">
@@ -101,18 +93,16 @@
         <div>
           <div class="font-semibold text-white mb-2">Connect With Me</div>
           <div class="flex gap-4">
-            <a href="www.linkedin.com/in/buhlebethu-mkhonta" aria-label="LinkedIn" class="bg-[#181c23] hover:bg-red-500 text-white rounded-md p-2 transition" target="_blank"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://www.linkedin.com/in/buhlebethu-mkhonta" aria-label="LinkedIn" class="bg-[#181c23] hover:bg-red-500 text-white rounded-md p-2 transition" target="_blank"><i class='bx bxl-linkedin'></i></a>
             <a href="https://github.com/percy-san" aria-label="GitHub" class="bg-[#181c23] hover:bg-red-500 text-white rounded-md p-2 transition" target="_blank"><i class='bx bxl-github'></i></a>
-            
           </div>
         </div>
       </div>
     </div>
     <!-- Contact Form -->
-    
     <div class="flex-1 bg-[#23272f] rounded-2xl shadow-lg p-8">
       <h3 class="font-semibold text-white text-lg mb-6">Send Me a Message</h3>
-      <form class="space-y-4" on:submit={handleSubmit}>
+      <form class="space-y-4" on:submit|preventDefault={handleSubmit}>
         <div class="flex flex-col md:flex-row gap-4">
           <div class="w-full">
             <label for="name" class="block text-white text-sm font-medium mb-2">Your Name</label>
@@ -177,5 +167,4 @@
       </form>
     </div>
   </div>
-  
 </section>
