@@ -49,7 +49,6 @@
         <li><a href="#skills" on:click={(e) => scrollToSection(e, 'skills')} class:active={currentSection === 'skills'}>Skills</a></li>
         <li><a href="#experience" on:click={(e) => scrollToSection(e, 'experience')} class:active={currentSection === 'experience'}>Experience</a></li>
         <li><a href="#certifications" on:click={(e) => scrollToSection(e, 'certifications')} class:active={currentSection === 'certifications'}>Certifications</a></li>
-        <li><a href="#projects" on:click={(e) => scrollToSection(e, 'projects')} class:active={currentSection === 'projects'}>Projects</a></li>
         <li><a href="#contact" on:click={(e) => scrollToSection(e, 'contact')} class:active={currentSection === 'contact'}>Contact</a></li>
       </ul>
     </div>
@@ -61,7 +60,6 @@
       <li class="hover:text-red-500 transition"><a href="#skills" on:click={(e) => scrollToSection(e, 'skills')} class:active={currentSection === 'skills'}>Skills</a></li>
       <li class="hover:text-red-500 transition"><a href="#experience" on:click={(e) => scrollToSection(e, 'experience')} class:active={currentSection === 'experience'}>Experience</a></li>
       <li class="hover:text-red-500 transition"><a href="#certifications" on:click={(e) => scrollToSection(e, 'certifications')} class:active={currentSection === 'certifications'}>Certifications</a></li>
-      <li class="hover:text-red-500 transition"><a href="#projects" on:click={(e) => scrollToSection(e, 'projects')} class:active={currentSection === 'projects'}>Projects</a></li>
       <li class="hover:text-red-500 transition"><a href="#contact" on:click={(e) => scrollToSection(e, 'contact')} class:active={currentSection === 'contact'}>Contact</a></li>
     </ul>
   </div>
