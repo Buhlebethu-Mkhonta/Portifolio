@@ -1,5 +1,7 @@
 <script>
   // No script needed for static hero
+  import { Image } from 'astro:assets';
+  //import myImage from './Drone.jpg'; // Import your image
 </script>
 
 <div class="relative min-h-screen flex items-center justify-center bg-black overflow-hidden pt-16">
