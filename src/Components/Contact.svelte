@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import emailjs from '@emailjs/browser';
 
   let formData = {
     name: '',
@@ -25,12 +26,18 @@
     submitStatus = '';
   });
 
+  // Configure EmailJS via environment variables
+  const EMAILJS_SERVICE_ID = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID;
+  const EMAILJS_TEMPLATE_ID = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID;
+  const EMAILJS_PUBLIC_KEY = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY;
+  const TO_EMAIL = import.meta.env.PUBLIC_CONTACT_TO_EMAIL || 'buhlebethumkhonta@gmail.com';
+
   function validateEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     isSubmitting = true;
     submitStatus = '';
@@ -42,15 +49,36 @@
       return;
     }
 
-    // Reset form
-    formData = {
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    };
-    submitStatus = 'success';
-    isSubmitting = false;
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: TO_EMAIL
+        },
+        {
+          publicKey: EMAILJS_PUBLIC_KEY
+        }
+      );
+
+      // Reset form on success
+      formData = {
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      };
+      submitStatus = 'success';
+    } catch (error) {
+      console.error('Email send failed:', error);
+      submitStatus = 'error';
+    } finally {
+      isSubmitting = false;
+    }
   }
 </script>
 
