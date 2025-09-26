@@ -3,26 +3,18 @@ const projects = [
   {
     title: 'Medical Drone Network',
     description: 'Established Eswatini\'s first medical drone delivery network, connecting remote clinics with central medical facilities.',
-    image: '/images/Drone.jpg',
+    image: 'https://skyy.network/wp-content/uploads/2024/03/image-large-2.png',
     tags: ['Logistics', 'Healthcare', 'Operations'],
     badge: 'Drone Operations',
-    link: '#',
+    link: 'https://www.unmannedairspace.info/latest-news-and-information/eswatinis-first-long-range-medical-drone-network-takes-to-the-skies/',
   },
   {
-    title: 'UNIFI Network Implementation',
-    description: 'Designed and deployed enterprise-grade UNIFI network infrastructure across multiple corporate locations.',
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80',
-    tags: ['Networking', 'Security', 'Scalability'],
-    badge: 'IT Infrastructure',
-    link: '#',
-  },
-  {
-    title: 'Utility Company Website',
-    description: 'Redesigned and developed the Eswatini Electrical Company website with improved user experience and functionality.',
-    image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80',
-    tags: ['Responsive', 'UI/UX', 'CMS'],
+    title: 'Ekupholeni Garden Villas Website',
+    description: 'Worked with client to redesign and develop a modern, responsive website for Ekupoleni Garden Villas, enhancing their online presence and user experience.',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjgMVnciuqn4lJd0dEG_rHKbq8x49Wr_4PMQ&s',
+    tags: ['Responsive', 'UI/UX'],
     badge: 'Web Development',
-    link: '#',
+    link: 'https://www.ekupholenigardenvillas.com/',
   },
   {
     title: 'Kpop Group Classifier',
@@ -59,7 +51,7 @@ const projects = [
             <span class="absolute top-3 right-3 bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">{project.badge}</span>
           </div>
           <div class="flex-1 flex flex-col p-5">
-            <h3 class="text-lg font-bold text-gray-900 mb-1">{project.title}</h3>
+            <h3 class="text-lg font-bold text-gray-900 mb-1"><a href={project.link} alt="Image" target=" _blank"> {project.title}</a></h3>
             <p class="text-gray-600 text-sm mb-4 flex-1">{project.description}</p>
             <div class="flex flex-wrap gap-2 mb-4">
               {project.tags.map(tag => (
@@ -70,8 +62,5 @@ const projects = [
         </div>
       ))}
     </div>
-    <!--<div class="flex justify-center mt-12">
-      <a href="#" class="px-6 py-3 bg-gray-900 text-white rounded-full font-semibold shadow hover:bg-gray-700 transition">View All Projects →</a>
-    </div>-->
   </div>
 </section>
